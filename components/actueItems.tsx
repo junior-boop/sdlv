@@ -1,9 +1,8 @@
-import Image from "next/image";
-import { Titre } from "./texte";
-import Style from '../styles/app.module.css'
-import Touchable from "./Touchable";
-import { futimesSync } from "fs";
-import { Images } from "./image";
+import Image from 'next/image';
+import { Titre } from './texte';
+import Style from '../styles/app.module.css';
+import Touchable from './Touchable';
+import { Images } from './image';
 
 export function ActuItem(){
     return(
