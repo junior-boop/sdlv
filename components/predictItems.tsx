@@ -1,6 +1,6 @@
-import { Card } from "./card";
-import { Images } from "./image";
-import Touchable from "./Touchable";
+import { Card } from './card';
+import { Images } from './image';
+import Touchable from './Touchable';
 
 export function PredicItemps(){
     return(

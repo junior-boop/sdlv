@@ -1,4 +1,4 @@
-import { CSSProperties } from "react"
+import { CSSProperties } from 'react'
 import Image from 'next/image'
 type ImageProps = {
     src : string,
