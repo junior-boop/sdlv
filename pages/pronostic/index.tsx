@@ -7,6 +7,7 @@ import { BigPredicItem, PredicItemps } from '../../components/predictItems'
 import DiapoPub from '../../Layouts/diapoPub'
 import Style from '../styles/Home.module.css'
 
+
 const Pronostic: NextPage = () => {
   return (
     <div>
