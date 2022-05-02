@@ -18,7 +18,7 @@ export function Images({className, src, alt, width, height, style, radius}:Image
     return(
         <div style={{borderRadius : Radius, ...style}}>
             <div>
-                <Image src={src} alt={alt} height = {height} width = {width} layout = 'fill' />
+                <img src={src} alt={alt} height = {height} width = {width} />
             </div> 
         </div>
     )

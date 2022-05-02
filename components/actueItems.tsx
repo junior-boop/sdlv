@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Titre } from './texte';
 import Style from '../styles/app.module.css';
 import Touchable from './Touchable';
@@ -7,8 +6,8 @@ import { Images } from './image';
 export function ActuItem(){
     return(
         <Touchable href={'/actus'} className={Style.actu} style={{width : 450, height : 450, display : 'flex', justifyContent : 'center', alignItems : 'center', position : 'relative', borderRadius : 12, overflow : 'hidden'}}>
-            <div style={{width: '178%', height : '100%',  position : 'relative', overflow : 'hidden', display : 'flex', justifyContent : 'center', alignItems : 'center', zIndex : 0}}>
-                <Images src = {'/salah.jpg'} height = {'100%'} width = {'178%'} />
+            <div style={{width: '100%', height : '100%',  position : 'relative', overflow : 'hidden', display : 'flex', justifyContent : 'center', alignItems : 'center', zIndex : 0}}>
+                <Images src = {'/salah.jpg'} height = {'100%'} />
             </div>
             <div style={{width : 450, height : 225, display : 'flex',  alignItems : 'flex-start', position : 'absolute', bottom : 0, left : 0, backgroundImage : "linear-gradient(transparent, black)", padding : '0 24px', }}>
                 <div>
