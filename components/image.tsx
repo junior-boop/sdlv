@@ -1,4 +1,5 @@
 import { CSSProperties } from "react"
+import Image from 'next/image'
 
 type ImageProps = {
     src : string,
@@ -17,7 +18,7 @@ export function Images({className, src, alt, width, height, style, radius}:Image
     return(
         <div style={{borderRadius : Radius, ...style}}>
             <div>
-                <img src={src} alt={alt} height = {height} width = {width} />
+                <Image src={src} alt={alt} height = {height} width = {width} />
             </div>
         </div>
     )
