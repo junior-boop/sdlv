@@ -1,0 +1,10 @@
+.mainGrid {
+    display: grid ;
+    grid-template-columns: 25% 1fr 25%;
+    width: 100%;
+}
+
+.actu + .actu {
+    margin-top: 24px;
+    border-top: 1px solid #eee;
+}

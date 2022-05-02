@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.STYLE {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto Slab; 
+    font-weight: 400;
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #ddd ;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 10;
+    }
+} 
+
+.titre {
+    font-family: Anton, Roboto Slab;
+    padding: 0;
+    margin-bottom:-5px ;
+    margin-top: 0;
+    font-weight: 500;
+    line-height: 95%;
+}
+
+.full {
+    width: 100%;
+    margin: 0; padding: 0;
+    display :flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@import 'container';
+@import 'logo';
+@import 'prediction';
+@import 'main'
