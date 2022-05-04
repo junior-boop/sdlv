@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { ActuItem, HorizontalMiniActuItem } from "../components/actueItems";
 
 export default function ActuSide(){
@@ -11,7 +12,9 @@ export default function ActuSide(){
             <HorizontalMiniActuItem />
             <HorizontalMiniActuItem />
             <ActuItem />
-            <div style={{width : 450, height : 150, margin : '24px 0', backgroundColor : '#ddd'}}></div>
+            <div style={{width : 450, height : 150, margin : '24px 0', backgroundColor : '#ddd'}}>
+                
+            </div>
             <ActuItem />
             <HorizontalMiniActuItem />
 
