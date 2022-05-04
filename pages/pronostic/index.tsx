@@ -47,7 +47,7 @@ const Pronostic: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Pronostic | S-D-L-V</title>
+        <title>Pronostic | SDLV</title>
         <meta name="description" content="Si Dieu Le Veut est un site web de prediction, de pronostic et d'actualité sportive. Elle a pour but d'apporter au parieur, à travers le monde les éléments necessaires pour effectuer des paries (stats, comparaisons, infos sur le/les match(s) et  Actualité en vironant la rancontre" />
         <link rel="icon" href="/icon.png" />
       </Head>
