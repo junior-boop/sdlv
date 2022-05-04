@@ -189,13 +189,13 @@ export function QuoteMatche({title, Matches} : quoteProps){
             <div style={{display : 'flex', marginTop : 5}}>
                 <div>
                     <div style={{ borderRadius : 12.5, fontWeight : 400, width : 70 , color : '#003418', display : "flex",alignItems : 'center',padding : 5}}>
-                        {dom.map((el : any) => <Match match={el} />)}
+                        {dom.map((el : any, key : number) => <Match match={el} />)}
                     </div>
                 </div>
                 <span style={{margin : '0 5px'}}> - </span>
                 <div>
                     <div style={{ borderRadius : 12.5, fontWeight : 400, width : 70 , color : 'black', display : "flex", justifyContent : 'center', alignItems : 'center', flexDirection:'row-reverse', fontSize : 12, padding : 5}}>
-                        {ext.map((el : any) => <Match match={el} />)}
+                        {ext.map((el : any, key : number) => <Match match={el} />)}
                     </div>
                 </div>
             </div>
