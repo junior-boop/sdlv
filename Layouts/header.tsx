@@ -71,7 +71,6 @@ export default function Header(){
                             <Link href={'/'}><a><li style={Active()}>Accueil</li></a></Link>
                             <Link href={'/pronostic'}><a><li>Pronostic</li></a></Link>
                             <Link href={'/actus'}><a><li>Actus</li></a></Link>
-                            <Link href={'/contact'}><a><li>Contacts</li></a></Link>
                         </ul>
                     </div>
                     <div>

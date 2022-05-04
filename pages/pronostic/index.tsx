@@ -3,9 +3,44 @@ import Head from 'next/head'
 import { MiniActuItem } from '../../components/actueItems'
 import Container from '../../components/container'
 import { Full } from '../../components/full'
+import { Images } from '../../components/image'
 import { BigPredicItem, PredicItemps } from '../../components/predictItems'
 import DiapoPub from '../../Layouts/diapoPub'
 import Style from '../styles/Home.module.css'
+
+
+const dataType = {
+  championat : 'Premier League',
+  logoLeague : '/epl.png',
+  receiver : 'Man. City',
+  Guest : 'Watfort',
+  date : 'aujourd\'hui',
+  pronostic : {
+      fistPronotic : '+ 2.5 Goals',
+      secondPronostic : '1X',
+  },
+  stats :{
+      shot : {
+          dom : 3.5,
+          ext : 5.5,
+          winner : 'ext'
+      },
+      possession : {
+          dom : 65,
+          ext : 55,
+          winner : 'dom'
+      },
+      defences : {
+          dom : 1.5,
+          ext : 2.4,
+          winner : 'dom'
+      },
+      match : {
+          dom : ['win', 'win', 'due', 'win', 'lost'],
+          ext : ['win', 'lost', 'due', 'win', 'win']
+      }
+  }
+}
 
 
 const Pronostic: NextPage = () => {
@@ -32,15 +67,13 @@ const Pronostic: NextPage = () => {
                       <p style={{fontSize : 16, fontWeight : 700, color : '#666'}}>Le Top </p>
                   </div>
                   <div style={{display : 'flex' }}>
-                    <BigPredicItem />
-                    <BigPredicItem />
-                    <BigPredicItem />
-                    <BigPredicItem />
+                    <BigPredicItem data={dataType} />
+                    <BigPredicItem data={dataType}/>
+                    <BigPredicItem data={dataType}/>
+                    <BigPredicItem data={dataType}/>
                   </div>
                   <div>
-                    <div style = {{width : '100%', height: '58px', alignItems : 'center', display : 'flex', justifyContent : 'space-between'}}>
-                        <p style={{fontSize : 16, fontWeight : 700, color : '#666'}}>Championat Anglais </p>
-                    </div>
+                  <Titreimage img='/epl.png' title='Championat Anglais' />
                     <div style={{display : 'flex', justifyContent : 'flex-start', alignItems : 'center', width : '100%'}}>
                       <div style = {{display : 'grid', gridTemplateColumns : 'repeat(3, 1fr)', gap : 12, width : '96%'}}>
                       <PredicItemps />
@@ -57,9 +90,7 @@ const Pronostic: NextPage = () => {
                     </div>
                   </div>
                   <div>
-                    <div style = {{width : '100%', height: '58px', alignItems : 'center', display : 'flex', justifyContent : 'space-between'}}>
-                        <p style={{fontSize : 16, fontWeight : 700, color : '#666'}}>Championat Espagnol </p>
-                    </div>
+                  <Titreimage img='/laliga.png' title='Championat Espagnol' />
                     <div style={{display : 'flex', justifyContent : 'flex-start', alignItems : 'center', width : '100%'}}>
                       <div style = {{display : 'grid', gridTemplateColumns : 'repeat(3, 1fr)', gap : 12, width : '96%'}}>
                       <PredicItemps />
@@ -104,3 +135,18 @@ const Pronostic: NextPage = () => {
 }
 
 export default Pronostic
+
+
+type TitreimageProps = {
+  img : string,
+  title: string,
+}
+
+export function Titreimage({img, title}: TitreimageProps){
+  return(
+    <div style = {{width : '23vw', height: '58px', alignItems : 'center', display : 'flex', justifyContent : 'flex-start', margin : '18px 0 0 '}}>
+        <Images src = {img}  width = {36} style = {{backgroundColor : 'white'}}  />
+        <p style={{fontSize : 16, fontWeight : 700, color : '#666', marginLeft : 12}}>{title}</p>
+    </div> 
+  )
+}
