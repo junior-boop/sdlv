@@ -81,7 +81,7 @@ export function HorizontalMiniActuItem(){
                 </div>
                 <div style={{width : 150, height : 150, overflow : 'hidden', borderRadius : 9, border : "1px solid #eee"}}>
                     <div style={{width : 150, height : 150, display : 'flex', alignItems : 'center', justifyContent : 'center', position : 'relative'}}>
-                        <img src={'/ten hag.jpg'} alt="coach" height={150} />
+                        <img src={'/ten Hag.jpg'} alt="coach" height={150} />
                     </div>
                 </div>
             </div>

@@ -156,7 +156,8 @@ export function QuotePer({pourcentDom, pourcentExt, title} : quoteProps){
 }
 
 type ColorProps = {
-    match? : 'win' | 'due' | 'lost' 
+    match? : 'win' | 'due' | 'lost', 
+    key? : any
 }
 
 
@@ -164,7 +165,7 @@ export function QuoteMatche({title, Matches} : quoteProps){
 
     let { dom, ext } = Matches
 
-    const Match = ({match} : ColorProps) => {
+    const Match = ({match, key} : ColorProps) => {
 
         const color = () =>{
             switch (match) {
@@ -189,13 +190,13 @@ export function QuoteMatche({title, Matches} : quoteProps){
             <div style={{display : 'flex', marginTop : 5}}>
                 <div>
                     <div style={{ borderRadius : 12.5, fontWeight : 400, width : 70 , color : '#003418', display : "flex",alignItems : 'center',padding : 5}}>
-                        {dom.map((el : any, key : number) => <Match match={el} />)}
+                        {dom.map((el : any, key : number) => <Match match={el} key={key} />)}
                     </div>
                 </div>
                 <span style={{margin : '0 5px'}}> - </span>
                 <div>
                     <div style={{ borderRadius : 12.5, fontWeight : 400, width : 70 , color : 'black', display : "flex", justifyContent : 'center', alignItems : 'center', flexDirection:'row-reverse', fontSize : 12, padding : 5}}>
-                        {ext.map((el : any, key : number) => <Match match={el} />)}
+                        {ext.map((el : any, key : number) => <Match match={el} key = {key} />)}
                     </div>
                 </div>
             </div>
