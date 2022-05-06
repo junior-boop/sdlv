@@ -9,7 +9,7 @@ export default function Document(){
                 <script dangerouslySetInnerHTML={{
                     __html: `
                     (adsbygoogle = window.adsbygoogle || []).push({
-                        google_ad_client: 1899219914731834,
+                        google_ad_client: '1899219914731834',
                         enable_page_level_ads: true
                         });
                         `,

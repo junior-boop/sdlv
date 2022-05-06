@@ -173,8 +173,8 @@
 .mainGrid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 1fr 25%;
-      grid-template-columns: 25% 1fr 25%;
+  -ms-grid-columns: 25% 1fr 250px;
+      grid-template-columns: 25% 1fr 250px;
   width: 100%;
 }
 
