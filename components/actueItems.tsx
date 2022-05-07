@@ -3,9 +3,15 @@ import Style from '../styles/app.module.css';
 import Touchable from './Touchable';
 import { Images } from './image';
 
+import { UI } from './constant';
+
 export function ActuItem(){
+
+
+    const actuItem = UI().actuItemUI
+
     return(
-        <Touchable href={'/actus'} className={Style.actu} style={{width : 450, height : 450, display : 'flex', justifyContent : 'center', alignItems : 'center', position : 'relative', borderRadius : 12, overflow : 'hidden'}}>
+        <Touchable href={'/actus'} className={Style.actu} style={{width : actuItem.width, height : actuItem.height, display : 'flex', justifyContent : 'center', alignItems : 'center', position : 'relative', borderRadius : 12, overflow : 'hidden'}}>
             <div style={{width: '100%', height : '100%',  position : 'relative', overflow : 'hidden', display : 'flex', justifyContent : 'center', alignItems : 'center', zIndex : 0}}>
                 <Images src = {'/salah.jpg'} height = {'100%'} style ={{height : '100%'}} />
             </div>

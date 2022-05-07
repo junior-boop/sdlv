@@ -24,7 +24,7 @@ export function BlockPubLarge(){
         }
     })
     return(
-        <div style={{width : 750, height : 150, backgroundColor : '#5552'}}>
+        <div style={{width : 750, height : 150}}>
             <ins className="adsbygoogle"
                 style={{display:"inline-block", width:"750px", height:"150px"}}
                 data-ad-client="ca-pub-1899219914731834"

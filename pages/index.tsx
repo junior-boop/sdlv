@@ -3,9 +3,19 @@ import Head from 'next/head'
 import { MiniActuItem } from '../components/actueItems'
 import DiapoPub from '../Layouts/diapoPub'
 import Main from '../Layouts/main'
-import Style from '../styles/Home.module.css'
+
+import {log, useWindowSize, UI} from '../components/constant'
+
+
+log('tres bien')
 
 const Home: NextPage = () => {
+
+  const window = useWindowSize()
+
+  let ui = UI()
+  console.log(window, ui)
+  
   return (
     <div>
       <Head>
