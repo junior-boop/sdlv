@@ -25,6 +25,27 @@
   z-index: 10;
 }
 
+.STYLE h1, .STYLE h2 {
+  font-family: Anton;
+  font-weight: 900;
+}
+
+.STYLE h1 {
+  font-size: 50px;
+}
+
+.STYLE h2 {
+  font-size: 42px;
+}
+
+.STYLE h3 {
+  font-size: 36px;
+}
+
+.STYLE h4 {
+  font-size: 24px;
+}
+
 .titre {
   font-family: Anton, Roboto Slab;
   padding: 0;

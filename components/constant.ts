@@ -2,10 +2,6 @@ import { useState, useEffect } from 'react';
 
 export const log = (x? : any) => console.log('je fonctionne', x)
 
-type useWindowSizeProps ={
-  width : number ,
-  height : number,
-}
 
 // Hook
 export function useWindowSize()  {

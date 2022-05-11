@@ -4,6 +4,8 @@ import Container from '../../components/container'
 import { Full } from '../../components/full'
 import Style from '../../styles/app.module.css'
 import {UI} from '../../components/constant'
+import { PredicItemps } from '../../components/predictItems'
+import { Titreimage } from '.'
 
 const Home: NextPage = () => {
   let ui = UI()
@@ -119,11 +121,29 @@ const Home: NextPage = () => {
             </Container>
           </Full>
           <Full style={{
-            backgroundColor : '#00E8FA11',
+            backgroundColor : '#00E8FA05',
             padding : `${ui.fonts._16px}px 0`,
           }}>
-            <Container>
-
+            <Container style={{flexDirection : 'column'}}>
+              <div>
+                <h3>Quelque dernieres etudes</h3>
+              </div>
+              <div style = {{
+                display : 'grid',
+                gridTemplateColumns : 'repeat(4, 1fr)',
+                gap : ui.fonts.littleText,
+                width : '100%',
+                marginBottom : ui.fonts._16px
+              }}>
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              <PredicItemps style={{ backgroundColor : 'white', boxShadow : '0 0 12px -12px #3337'}} />
+              </div>
             </Container>
           </Full>
       </main>

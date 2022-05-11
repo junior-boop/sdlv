@@ -4,52 +4,61 @@ import Router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Container from "../components/container";
 import Style from '../styles/app.module.css'
+import { CSSProperties } from 'react'
+import { arch } from "os";
 
 
 export default function Header(){
-    let [accueil, setAccueil] = useState(false)
-    let [pronostic, setPronostic] = useState(false)
-    let [actus, setActus] = useState(false)
-    let [contact, setContact] = useState(false)
+    let [router, setRouter] = useState('')
     
     let route = useRouter().route;
+    console.log(route)
 
     useEffect(() => {
-       switch (route) {
+        switch (route)  {
             case '/':
-                setAccueil(true);
-                setContact(false)
-                setPronostic(false)
-                setActus(false)
+                setRouter('home')
             case '/pronostic':
-                setAccueil(false);
-                setContact(false)
-                setPronostic(true)
-                setActus(false)
-
+               setRouter('pronostic')
             case '/actus' :
-                setAccueil(false);
-                setContact(false)
-                setPronostic(false)
-                setActus(true)
-
+               setRouter('actus')
             case 'contact':
-                setAccueil(false);
-                setContact(true)
-                setPronostic(false)
-                setActus(false)
+               setRouter('contact')
+            default :
+               setRouter('home')
        }
+       console.log(router)
+    },[])
 
-    })
-
-    const Active = () => {
-        if(accueil){
-            console.log('vrai')
-            return { borderBottom : '5px solid #ff3e3e' }
+    const Home = () : CSSProperties => {
+       if (route !== '/'){
+           return {backgroundColor : 'white',}
         } else {
-            return 
-        }
+           return {borderBottomColor : 'red', color : '#111', fontWeight : '600' }
+       }
     }
+
+    const Pronos = () : CSSProperties => {
+        if (route !== '/pronostic'){
+            return {backgroundColor : 'white',}
+         } else {
+            return {borderBottomColor : 'red', color : '#111', fontWeight : '600' }
+        }
+     }
+     const Actus = () : CSSProperties => {
+        if (route !== '/actus'){
+            return {backgroundColor : 'white',}
+         } else {
+            return {borderBottomColor : 'red', color : '#111', fontWeight : '600' }
+        }
+     }
+     const Contact = () : CSSProperties => {
+        if (route !== '/contacts'){
+            return {backgroundColor : 'white',}
+         } else {
+            return {borderBottomColor : 'red', color : '#111', fontWeight : '600' }
+        }
+     }
 
     return(
         <header>
@@ -68,9 +77,9 @@ export default function Header(){
                     </div>
                     <div className={Style.menu}>
                         <ul>
-                            <Link href={'/'}><a><li style={Active()}>Accueil</li></a></Link>
-                            <Link href={'/pronostic'}><a><li>Pronostic</li></a></Link>
-                            <Link href={'/actus'}><a><li>Actus</li></a></Link>
+                            <Link href={'/'}><a><li style={Home()}>Accueil</li></a></Link>
+                            <Link href={'/pronostic'}><a><li style={Pronos()}>Pronostic</li></a></Link>
+                            <Link href={'/actus'}><a><li style={Actus()}>Actus</li></a></Link>
                         </ul>
                     </div>
                     <div>
