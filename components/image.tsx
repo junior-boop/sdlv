@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 type ImageProps = {
-    src : string,
+    src : string | undefined,
     alt? : string,
     width? : number | string | undefined,
     height? : number | string | undefined,

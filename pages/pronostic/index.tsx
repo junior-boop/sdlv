@@ -6,7 +6,7 @@ import { Full } from '../../components/full'
 import { Images } from '../../components/image'
 import { BigPredicItem, PredicItemps } from '../../components/predictItems'
 import DiapoPub from '../../Layouts/diapoPub'
-import Style from '../styles/Home.module.css'
+import {UI} from '../../components/constant'
 
 
 const dataType = {
@@ -63,9 +63,7 @@ const Pronostic: NextPage = () => {
             }}>
               <div>
                 <div>
-                  <div style = {{width : '100%', height: '58px', alignItems : 'center', display : 'flex', justifyContent : 'space-between'}}>
-                      <p style={{fontSize : 16, fontWeight : 700, color : '#666'}}>Le Top </p>
-                  </div>
+                  <Titreimage title='Top'/>
                   <div style={{display : 'flex' }}>
                     <BigPredicItem data={dataType} />
                     <BigPredicItem data={dataType}/>
@@ -138,15 +136,16 @@ export default Pronostic
 
 
 type TitreimageProps = {
-  img : string,
+  img? : string | undefined,
   title: string,
 }
 
 export function Titreimage({img, title}: TitreimageProps){
+  let font = UI().fonts
   return(
-    <div style = {{width : '23vw', height: '58px', alignItems : 'center', display : 'flex', justifyContent : 'flex-start', margin : '18px 0 0 '}}>
-        <Images src = {img}  width = {36} style = {{backgroundColor : 'white'}}  />
-        <p style={{fontSize : 16, fontWeight : 700, color : '#666', marginLeft : 12}}>{title}</p>
+    <div style = {{width : '23vw', height: '5vw', alignItems : 'center', display : 'flex', justifyContent : 'flex-start', margin : '18px 0 0 '}}>
+        {img !== undefined ? <Images src = {img}  width = {font.BigTitle} style = {{backgroundColor : 'white'}}  /> : ''}
+        <p style={{fontSize : font._16px, fontWeight : 700, color : '#666', marginLeft : font.littleText}}>{title}</p>
     </div> 
   )
 }

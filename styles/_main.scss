@@ -1,10 +1,24 @@
 .mainGrid {
     display: grid ;
-    grid-template-columns: 25% 1fr 250px;
     width: 100%;
 }
 
 .actu + .actu {
-    margin-top: 24px;
+    margin-top: calc(0.036199 * 100vh);
     border-top: 1px solid #eee;
+}
+
+
+.competitions {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        padding: 12px 0;
+        color : rgb(67, 67, 67)
+    }
+
+    li + li {
+        border-top: 1px solid rgb(235, 235, 235);
+    }
 }

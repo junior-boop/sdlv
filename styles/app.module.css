@@ -59,8 +59,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 62px;
-  width: 1160px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -173,13 +171,25 @@
 .mainGrid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 1fr 250px;
-      grid-template-columns: 25% 1fr 250px;
   width: 100%;
 }
 
 .actu + .actu {
-  margin-top: 24px;
+  margin-top: calc(0.036199 * 100vh);
   border-top: 1px solid #eee;
+}
+
+.competitions {
+  list-style: none;
+  padding-left: 0;
+}
+
+.competitions li {
+  padding: 12px 0;
+  color: #434343;
+}
+
+.competitions li + li {
+  border-top: 1px solid #ebebeb;
 }
 /*# sourceMappingURL=app.module.css.map */

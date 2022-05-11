@@ -1,6 +1,7 @@
 import { Card } from './card';
 import { Images } from './image';
 import Touchable from './Touchable';
+import {UI} from './constant'
 
 import {CSSProperties} from 'react'
 
@@ -12,17 +13,20 @@ type PredicItempsProps = {
 
 
 export function PredicItemps({ style }: PredicItempsProps){
+    let ui = UI().fonts
+    let predicItem = UI().predictableItems
+    let p = UI().padding
     return(
-        <Touchable href = {'/pronostic'} style={{minHeight : 70, width : '100%', border : '1px solid #eee', borderRadius : 12, padding : 12, ...style}}>
-            <div style={{fontSize : 11, fontWeight : 300, color: "silver"}}>Date of de Day</div>
-            <div style={{fontSize : 14, fontWeight : 500, color: "#444"}}>{'Man. City'} - {'Watford'}</div>
-            <div style={{fontSize : 13, padding : "5px 0 0 0", display : "flex"}}>
-                <div style={{ borderRadius : 12.5, fontWeight : 600,backgroundColor : '#ff3e3e', color : 'white', padding : '5px 10px', marginRight : 5}}>
+        <Touchable href = {'/pronostic/123343'} style={{minHeight : predicItem.minHeight, width : '100%', border : '1px solid #eee', borderRadius : ui.littleText, padding : ui.littleText, ...style}}>
+            <div style={{fontSize : ui.littleText, fontWeight : 300, color: "silver"}}>Date of de Day</div>
+            <div style={{fontSize : ui.normalText, fontWeight : 500, color: "#444"}}>{'Man. City'} - {'Watford'}</div>
+            <div style={{fontSize : p * 2.6, padding : `${p}px 0 0 0`, display : "flex"}}>
+                <div style={{ borderRadius : ui.littleText, fontWeight : 600,backgroundColor : '#ff3e3e', color : 'white', padding : '5px 10px', marginRight : p}}>
                     <div>
                        + 2.5 buts
                     </div>
                 </div>
-                <div style={{ borderRadius : 12.5, fontWeight : 900, backgroundColor : '#ff3e3e33', padding : '5px 10px', color : "#ff3e3e"}}>
+                <div style={{ borderRadius : ui.littleText, fontWeight : 900, backgroundColor : '#ff3e3e33', padding : `${p}px ${ui.littleText}px`, color : "#ff3e3e"}}>
                     <div>
                       1X
                     </div>
@@ -43,13 +47,17 @@ export function BigPredicItem ({data}: BigPredicItemProps){
     let  {shot, possession, defences, match} = data.stats
     let {fistPronotic, secondPronostic} = data.pronostic
 
+    let ui = UI().predictableItems
+    let font = UI().fonts
+    let p = UI().padding
+
     return(
        <Card
-        href={'/pronostic'}
-        style={{ border : '1px solid #eee', display : 'inline-flex', width : 200, position : 'relative', justifyContent : 'center', height : 'auto', borderRadius : 12, paddingBottom : 12}}
+        href={'/pronostic/1234434'}
+        style={{ border : '1px solid #eee', display : 'inline-flex', width : ui._200px, position : 'relative', justifyContent : 'center', height : 'auto', borderRadius : font.littleText, paddingBottom : font.littleText}}
        >
-               <Images src = {logoLeague} width = {36} style = {{ position : 'absolute', top : -18, display : "flex", justifyContent: 'center',left : '37.5%', width : 50, backgroundColor : 'white'}} />
-           <div style={{display : 'flex', alignItems : 'flex-start', justifyContent : 'center', paddingTop : 36, width : '100%'}}>
+               <Images src = {logoLeague} width = {font.BigTitle} style = {{ position : 'absolute', top : `-${p * 3.6}px`, display : "flex", justifyContent: 'center', left : '37.5%', width : 50, backgroundColor : 'white'}} />
+           <div style={{display : 'flex', alignItems : 'flex-start', justifyContent : 'center', paddingTop : font.BigTitle, width : '100%'}}>
                
                <div  style={{display : 'flex', flexDirection : 'column', alignItems : 'center', width : '100%' }}>
                 <div style={{fontSize : 11, fontWeight : 300, color: "silver"}}>{date}</div>

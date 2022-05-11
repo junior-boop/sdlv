@@ -54,7 +54,7 @@ export default function Header(){
     return(
         <header>
             <div>
-                <Container>
+                <Container style={{ height : 62 }}>
                     <div className={Style.containerInner}>
                     <div className={Style.logo}>
                        <div className={Style.logoCase}>
