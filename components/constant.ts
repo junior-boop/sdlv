@@ -5,19 +5,18 @@ export const log = (x? : any) => console.log('je fonctionne', x)
 
 // Hook
 export function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
 
   useEffect(() => {
-    // only execute all the code below in client side
+
     if (typeof window !== 'undefined') {
-      // Handler to call on window resize
+
       const handleResize = () : void =>  {
-        // Set window width/height to state
+
         setWindowSize({
           width: window.innerWidth,
           height: window.innerHeight,
@@ -27,13 +26,11 @@ export function useWindowSize() {
       // Add event listener
       window.addEventListener("resize", handleResize);
      
-      // Call handler right away so state gets updated with initial window size
       handleResize();
     
-      // Remove event listener on cleanup
       return () => window.removeEventListener("resize", handleResize);
     }
-  }, []); // Empty array ensures that effect is only run on mount
+  }, []);
   return windowSize;
 }
 
@@ -47,20 +44,45 @@ export function UI() {
   const ui = {
     width : width,
     height : height,
+    container : isUndefined ? '85vw' : 0.85 * width,
+    radui : isUndefined ? 12 : 0.00878477 * width,
+    padding : isUndefined ? 5 : 0.00366 * width,
+    _50px : isUndefined ? 50 : 0.037 * width,
     logo : {
       width : 62,
       height : 62
     }, 
     actuItemUI : {
-      width : isUndefined ? null : 32.943 * width / 100,
-      height : isUndefined ? null : 32.943 * width / 100 
+      width : isUndefined ? '100%' : 32.943 * width / 100,
+      height : isUndefined ? '100%' : 32.943 * width / 100,
+      heightMask : isUndefined ? '100%' : 0.1647145 * width,
+      _150px : isUndefined ? 150 : 0.109809 * width,
     }, 
+    horizontalActuItemUI : {
+      width : isUndefined ? '100%' : 32.943 * width / 100,
+      height : isUndefined ? '100%' : 0.10981 * width,
+      widthImg : isUndefined ? '100%' : 0.10981 * width,
+      heightImg : isUndefined ? '100%' : 0.10981 * width,
+      widthContent : isUndefined ? '100%' : 0.21962 * width
+    },
     miniActuItemUI : {
-      width : isUndefined ? null : 32.943 * width / 100,
-
-      widthImg : isUndefined ? null : 0.10981 * width,
-      heightImg : isUndefined ? null : 0.10981 * width,
+      width : isUndefined ? '100%' : 0.18302 * width,
+      height : isUndefined ? '100%' : 0.32943 * width,
+      widthImg : isUndefined ? '100%' : 0.18302 * width,
+      heightImg : isUndefined ? '100%' : 0.18302 * width,
+    },
+    predictableItems : {
+      minHeight : isUndefined ? 70 : 0.05124451 * width,
+      _200px : isUndefined ? 200 : 0.1464128 * width,
+    },
+    fonts : {
+      BigTitle : isUndefined ? 36 : 0.02635432 * width,
+      LittleTitle : isUndefined ? 24 : 0.01757 * width,
+      normalText : isUndefined ? 14 : 0.0102489 * width,
+      littleText : isUndefined ? 12 : 0.00878477 * width,
+      _16px : isUndefined ? 16 : 0.011713 * width,
     }
+    
   }
 
   return ui
