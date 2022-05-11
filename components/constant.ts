@@ -2,13 +2,17 @@ import { useState, useEffect } from 'react';
 
 export const log = (x? : any) => console.log('je fonctionne', x)
 
+type useWindowSizeProps ={
+  width : number ,
+  height : number,
+}
 
 // Hook
-export function useWindowSize() {
+export function useWindowSize()  {
 
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
+  const [windowSize, setWindowSize]  = useState({
+    width : 0,
+    height : 0
   });
 
   useEffect(() => {
@@ -37,8 +41,8 @@ export function useWindowSize() {
 
 export function UI() {
 
-  const width : number | undefined = useWindowSize().width
-  const height : number | undefined = useWindowSize().height
+  const width : number  = useWindowSize().width
+  const height : number  = useWindowSize().height
   const isUndefined = typeof width === undefined
 
   const ui = {
