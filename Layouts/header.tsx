@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Container from "../components/container";
 import Style from '../styles/app.module.css'
 import { CSSProperties } from 'react'
-import { arch } from "os";
 
 
 export default function Header(){
@@ -65,28 +64,28 @@ export default function Header(){
             <div>
                 <Container style={{ height : 62 }}>
                     <div className={Style.containerInner}>
-                    <div className={Style.logo}>
-                       <div className={Style.logoCase}>
-                       <Image 
-                            src = {'/logo.png'}
-                            width = {36}
-                            height = {36}
-                            layout = 'fill'
-                        />
-                       </div>
-                    </div>
-                    <div className={Style.menu}>
-                        <ul>
-                            <Link href={'/'}><a><li style={Home()}>Accueil</li></a></Link>
-                            <Link href={'/pronostic'}><a><li style={Pronos()}>Pronostic</li></a></Link>
-                            <Link href={'/actus'}><a><li style={Actus()}>Actus</li></a></Link>
-                        </ul>
-                    </div>
-                    <div>
-                        <div className={Style.genius}>
-                            <Link href = 'htts://www.geniusOfDigital.vercle.app'><a><p>#geniusOfDigital</p></a></Link>
+                        <div className={Style.logo}>
+                        <div className={Style.logoCase}>
+                        <Image 
+                                src = {'/logo.png'}
+                                width = {36}
+                                height = {36}
+                                layout = 'fill'
+                            />
                         </div>
-                    </div>
+                        </div>
+                        <div className={Style.menu}>
+                            <ul>
+                                <Link href={'/'}><a><li style={Home()}>Accueil</li></a></Link>
+                                <Link href={'/pronostic'}><a><li style={Pronos()}>Pronostic</li></a></Link>
+                                <Link href={'/actus'}><a><li style={Actus()}>Actus</li></a></Link>
+                            </ul>
+                        </div>
+                        <div>
+                            <div className={Style.genius}>
+                                <Link href = 'htts://www.geniusOfDigital.vercle.app'><a><p>#geniusOfDigital</p></a></Link>
+                            </div>
+                        </div>
                     </div>
                 </Container>
             </div>
